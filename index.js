@@ -33,9 +33,9 @@ app.get("/", (req, res) => {
 
 app.post("/user/register", (req, res) => {
   const username = req.body.username
-  let flag = "hgame{fake_flag_here}"
+  let flag = "NSSCTF{fake_flag_here}"
   if (username == "admin" && req.ip == "127.0.0.1" || req.ip == "::ffff:127.0.0.1") {
-    flag = "hgame{true_flag_here}"
+    flag = "NSSCTF{133716e2-c985-46f7-81d6-dae5b7c460ab}"
   }
   const token = jwt.sign({ username, flag }, secret)
   res.json({ token })
